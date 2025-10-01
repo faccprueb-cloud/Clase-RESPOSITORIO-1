@@ -1,0 +1,361 @@
+/* styles.css — Arte de página Semana del Cine La Paz */
+
+:root {
+  --bg-dark: #0c0f2a;
+  --bg-light: #1a1f3a;
+  --accent: #ff5f57;
+  --accent2: #ffa41c;
+  --text-light: #f0f4f8;
+  --text-muted: #aab2c1;
+  --radius: 12px;
+  --transition: 0.3s ease;
+  --max-width: 1160px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0; padding: 0;
+}
+
+body {
+  background: linear-gradient(180deg, var(--bg-dark), var(--bg-light));
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 2rem 0;
+}
+
+.hero {
+  position: relative;
+  height: 90vh;
+  background: url('https://images.unsplash.com/photo-1502136969935-8d1b8b2b8f79?auto=format&fit=crop&w=1600&q=60') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(10, 15, 35, 0.6);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  padding: 1.5rem;
+  z-index: 10;
+}
+
+.logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.nav-links li a:hover {
+  background: var(--accent2);
+  color: var(--bg-dark);
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+/* Hero Content */
+.hero-content {
+  z-index: 5;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.hero-content p {
+  margin: 1rem 0 2rem;
+  font-size: 1.4rem;
+  color: var(--text-muted);
+}
+
+/* Buttons */
+.btn {
+  text-decoration: none;
+  color: var(--text-light);
+  background: var(--accent);
+  padding: 0.8rem 2rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background: var(--accent2);
+  transform: scale(1.05);
+}
+
+.btn-cta {
+  font-size: 1.2rem;
+}
+
+/* Sections */
+.section {
+  padding: 4rem 0;
+}
+
+/* About Cards */
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: var(--bg-light);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  transition: var(--transition);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-body h3 {
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.card-body p {
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+}
+
+/* Timeline for schedule */
+.schedule .timeline {
+  position: relative;
+  margin-top: 2rem;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--accent);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+}
+
+.timeline-item .circle {
+  position: absolute;
+  left: 12px;
+  width: 16px;
+  height: 16px;
+  background: var(--accent);
+  border-radius: 50%;
+  top: 0;
+}
+
+.timeline-item .content h3 {
+  font-size: 1.3rem;
+}
+
+.timeline-item .content p {
+  margin-top: 0.3rem;
+  color: var(--text-muted);
+}
+
+/* Film grid */
+.film-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.film-card {
+  background: var(--bg-light);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  transition: var(--transition);
+}
+
+.film-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.film-info {
+  padding: 1rem;
+}
+
+.film-info h3 {
+  font-size: 1.4rem;
+  color: var(--accent);
+}
+
+.film-info p {
+  margin-top: 0.4rem;
+  color: var(--text-muted);
+}
+
+.film-card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* Venue section */
+.venue-image {
+  margin-top: 2rem;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.venue-image img {
+  width: 100%;
+  object-fit: cover;
+  height: 400px;
+}
+
+/* Register form */
+.register-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.register-form input, .register-form select {
+  flex: 1 1 280px;
+  padding: 0.8rem;
+  border: 1px solid var(--accent2);
+  border-radius: var(--radius);
+  background: var(--bg-light);
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+.register-form button {
+  padding: 0.8rem 2rem;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius);
+  color: var(--text-light);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.register-form button:hover {
+  background: var(--accent2);
+  transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+  background: var(--bg-dark);
+  padding: 2rem 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-content p {
+  color: var(--text-muted);
+}
+
+.socials a {
+  color: var(--text-light);
+  margin-left: 1rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.socials a:hover {
+  color: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: var(--bg-dark);
+    flex-direction: column;
+    width: 200px;
+    transform: translateX(100%);
+    transition: var(--transition);
+    padding: 1rem;
+  }
+  .nav-links.open {
+    transform: translateX(0);
+  }
+  .nav-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  .film-grid {
+    grid-template-columns: 1fr;
+  }
+}
